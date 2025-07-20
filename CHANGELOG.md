@@ -32,6 +32,7 @@
 #### :bug: Bug fix
 
 - Fix `--create-sourcedirs` generation with for a single project. https://github.com/rescript-lang/rescript/pull/7671
+- Fix locations of regex literals. https://github.com/rescript-lang/rescript/pull/7683
 
 # 12.0.0-beta.2
 
