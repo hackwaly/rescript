@@ -126,6 +126,8 @@ async fn async_watch(
                 }
             }
 
+            log::debug!("{:?}", event.paths);
+
             let paths = event
                 .paths
                 .iter()
@@ -316,6 +318,9 @@ pub fn start(
 
         let mut watcher = RecommendedWatcher::new(move |res| producer.push(res), Config::default())
             .expect("Could not create watcher");
+
+        log::debug!("watching {folder}");
+
         watcher
             .watch(folder.as_ref(), RecursiveMode::Recursive)
             .expect("Could not start watcher");
